@@ -165,9 +165,9 @@ class PhotoCollageWindow(Gtk.Window):
         class Options:
             def __init__(self):
                 self.border_w = 0.01
-                self.border_c = "black"
-                self.out_w = 800
-                self.out_h = 600
+                self.border_c = "white"
+                self.out_w = 2160
+                self.out_h = 2160
 
         self.opts = Options()
 
@@ -430,7 +430,7 @@ class PhotoCollageWindow(Gtk.Window):
             border_color=self.opts.border_c,
             on_update=gtk_run_in_main_thread(on_update),
             on_complete=gtk_run_in_main_thread(on_complete),
-            on_fail=gtk_run_in_main_thread(on_fail))
+            on_fail=gtk_run_in_main_thread(on_fail), quality=2)
         t.start()
 
         response = compdialog.run()

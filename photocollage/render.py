@@ -221,7 +221,7 @@ class RenderingTask(Thread):
         if self.quality == QUALITY_FAST:
             method = PIL.Image.NEAREST
         else:
-            method = PIL.Image.ANTIALIAS
+            method = PIL.Image.LANCZOS
 
         shape = img.size[0] * cell.h - img.size[1] * cell.w
         if shape > 0:  # image is too thick
